@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "path": "api"
+        },
+        {
+            "path": "database_psotgresql"
+        },
+        {
+            "path": "faker"
+        },
+        {
+            "path": "web"
+        }
+    ]
+}
