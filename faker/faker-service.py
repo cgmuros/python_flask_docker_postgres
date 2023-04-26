@@ -31,12 +31,7 @@ def execute_queries(list_queries_string=[], querie_type = ''):
             for querie in list_queries_string:
                 with db.connect() as conn:
                     data_profiles = conn.execute(text(querie)).fetchall()
-            # logging.debug(data_profiles)
-            for ix in data_profiles:
-                logging.debug(ix)
-                # d.append
             return json.dumps([dict(ix) for ix in data_profiles])
-            # return data_profiles
     except Exception as ex:
         logging.debug(f"Error: {ex}")
 
@@ -81,7 +76,7 @@ def get_profile():
         data_profile = json.loads(
             execute_queries([query_data], "SELECT")
         )
-        return json.dumps(str(data_profile))
+        return json.dumps(data_profile)
     except Exception as ex:
         logging.error(ex)
         return {"message": "error en consulta de datos en servicio faker-service"}
